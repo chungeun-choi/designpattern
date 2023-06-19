@@ -2,7 +2,7 @@ package abstractfactory
 
 
 
-type Desk interface {
+type DeskInterface interface {
 	SetName(name string)
 	GetName() string
 	SetCategory(category string)
@@ -12,46 +12,25 @@ type Desk interface {
 
 
 
-type EnticDesk struct {
+type Desk struct {
 	name string
-	category string 
-}
-
-func (ec *EnticDesk) SetName(name string) {
-	ec.name = name
-} 
-
-func (ec *EnticDesk) GetName() string {
-	return ec.name
-}
-
-func (ec *EnticDesk) SetCategory(category string) {
-	ec.category = category
-}
-
-func (ec *EnticDesk) GetCategory() string {
-	return ec.category
+	category string
 }
 
 
-
-type ModernDesk struct {
-	name string
-	category string 
+func (d *Desk) SetName(name string) {
+	d.name = name
 }
 
-func (ec *ModernDesk) SetName(name string) {
-	ec.name = name
-} 
 
-func (ec *ModernDesk) GetName() string {
-	return ec.name
+func (d *Desk) SetCategory(category string) {
+	d.category = category
 }
 
-func (ec *ModernDesk) SetCategory(category string) {
-	ec.category = category
+func (d *Desk) GetName() string {
+	return d.name
 }
 
-func (ec *ModernDesk) GetCategory() string {
-	return ec.category
+func (d *Desk) GetCategory() string {
+	return d.category 
 }

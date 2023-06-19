@@ -1,23 +1,19 @@
 package abstractfactory
 
-type Entic interface {
-	CreateModernChair(name string, category string)
-	CreateModernDesk(name string, category string)
-	CreateModernSopa(name string, category string)
+
+type EnticFurniture struct {
+}
+
+type EnticChair struct {
+	Chair
 }
 
 
-type EnticProduct struct {
-	EnticChair
-	EnticDesk
-	EnticSopa
+type EnticDesk struct {
+	Desk
 }
 
-func (ep *EnticProduct) CreateModernChair(name string, category string) Chair{
-	ep.EnticChair = &EnticChair{
-		name : name,
-		category : categoryl,
-	}
-	
-	return ep.EnticChair
+type EnticSopa struct {
+	Sopa
 }
+

@@ -2,7 +2,7 @@ package abstractfactory
 
 
 
-type Chair interface {
+type ChairInterface interface {
 	SetName(name string)
 	GetName() string
 	SetCategory(category string)
@@ -12,46 +12,25 @@ type Chair interface {
 
 
 
-type EnticChair struct {
+type Chair struct {
 	name string
-	category string 
+	category string
 }
 
-func (ec *EnticChair) SetName(name string) {
-	ec.name = name
+
+func (c *Chair) SetName(name string){
+	c.name = name
+}
+
+
+func (c *Chair) SetCategory(category string){
+	c.category = category
 } 
 
-func (ec *EnticChair) GetName() string {
-	return ec.name
+func (c *Chair) GetName() string{
+	return c.name
 }
 
-func (ec *EnticChair) SetCategory(category string) {
-	ec.category = category
-}
-
-func (ec *EnticChair) GetCategory() string {
-	return ec.category
-}
-
-
-
-type ModernChair struct {
-	name string
-	category string 
-}
-
-func (ec *ModernChair) SetName(name string) {
-	ec.name = name
-} 
-
-func (ec *ModernChair) GetName() string {
-	return ec.name
-}
-
-func (ec *ModernChair) SetCategory(category string) {
-	ec.category = category
-}
-
-func (ec *ModernChair) GetCategory() string {
-	return ec.category
+func (c *Chair) GetCategory() string{
+	return c.category
 }

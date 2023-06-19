@@ -1,6 +1,6 @@
 package abstractfactory
 
-type Sopa interface {
+type SopaInterface interface {
 	SetName(name string)
 	GetName() string
 	SetCategory(category string)
@@ -10,46 +10,23 @@ type Sopa interface {
 
 
 
-type EnticSopa struct {
+type Sopa struct {
 	name string
-	category string 
+	category string
 }
 
-func (ec *EnticSopa) SetName(name string) {
-	ec.name = name
-} 
-
-func (ec *EnticSopa) GetName() string {
-	return ec.name
+func (s *Sopa) SetName(name string) {
+	s.name = name
 }
 
-func (ec *EnticSopa) SetCategory(category string) {
-	ec.category = category
+func (s *Sopa) SetCategory(category string) {
+	s.category = category
 }
 
-func (ec *EnticSopa) GetCategory() string {
-	return ec.category
+func (s *Sopa) GetCategory()string{
+	return s.category
 }
 
-
-
-type ModernSopa struct {
-	name string
-	category string 
-}
-
-func (ec *ModernSopa) SetName(name string) {
-	ec.name = name
-} 
-
-func (ec *ModernSopa) GetName() string {
-	return ec.name
-}
-
-func (ec *ModernSopa) SetCategory(category string) {
-	ec.category = category
-}
-
-func (ec *ModernSopa) GetCategory() string {
-	return ec.category
+func (s *Sopa) Getname()string{
+	return s.name
 }
