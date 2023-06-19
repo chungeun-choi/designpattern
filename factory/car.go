@@ -7,28 +7,28 @@ type Car struct {
 }
 
 
-func (c *Car) setName(name string) {
+func (c *Car) SetName(name string) {
 	c.name = name
 }
 
 
-func(c *Car) setMaker(maker string){
+func(c *Car) SetMaker(maker string){
 	c.maker = maker
 }
 
-func (c *Car) setPower(power int) {
+func (c *Car) SetPower(power int) {
 	c.power = power
 }
 
-func (c *Car) getName() string{
+func (c *Car) GetName() string{
 	return c.name
 }
 
-func (c *Car) getPower() int{
+func (c *Car) GetPower() int{
 	return c.power
 }
 
 
-func (c *Car) getMaker() string {
+func (c *Car) GetMaker() string {
 	return c.maker
 }

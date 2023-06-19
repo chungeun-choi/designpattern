@@ -6,7 +6,7 @@ func GetCar(carType string) (CarProduct,error){
 	if carType =="Genesis" {
 		return newGenesis(), nil
 	}
-	if carType =="K#" {
+	if carType =="K3" {
 		return newK3(), nil
 	}
 
