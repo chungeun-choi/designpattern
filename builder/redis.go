@@ -1,6 +1,10 @@
 package builder
 
-import "net/http"
+import (
+	"net/http"
+	"strconv"
+	"strings"
+)
 
 
 
@@ -18,17 +22,21 @@ type RedisConnection struct {
 
 
 func (rc *RedisConnection) SetConfig() {
-	rc.host = "loaclhsot.com"
+	rc.host = "localhsot"
 	rc.auth = Auth{
-		user: "elastic",
+		user: "redis",
 		password: "skscnd331@",
 	}
 	rc.port = 6379
 }
 
 func (rc *RedisConnection) ConnetcObject()  {
-	
-	resp,err := http.Get(rc.host)
+	var stb strings.Builder
+	stb.WriteString(rc.host)
+	stb.WriteString(":")
+	stb.WriteString(strconv.Itoa(rc.port))
+
+	resp,err := http.Get(stb.String())
 
 	rc.connection = resp
 	rc.err = err

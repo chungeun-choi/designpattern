@@ -4,13 +4,15 @@ import (
 	"fmt"
 
 	af "github.com/designpattern/abstractFactory"
+	. "github.com/designpattern/builder"
 	. "github.com/designpattern/factory"
 )
 
 
 func main() {
 	//factory()
-	abstractFactory()
+	//abstractFactory()
+	builder()
 }
 
 func printDetails(c CarProduct){
@@ -45,3 +47,14 @@ func abstractFactory() {
 	fmt.Println()
 	fmt.Printf("Moder Sopa category: %s",ms.GetCategory())
 }	
+
+func builder() {
+	obj := MakeRedisBuilder()
+
+	obj.SetConfig()
+	obj.ConnetcObject()
+	
+	fmt.Print(obj.GetRedisConnection())
+
+	obj.CheckConnection()
+}
