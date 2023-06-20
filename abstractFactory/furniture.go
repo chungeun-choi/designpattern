@@ -1,16 +1,22 @@
 package abstractfactory
 
+import "fmt"
 
 
 type FurnitureFactory interface {
-	MakeChair() Chair
-	MakeDesk() Desk
-	MakeSopa() Sopa
+	MakeChair() ChairInterface
+	MakeDesk() DeskInterface
+	MakeSopa() SopaInterface
 }
 
+func GetFurniture(style string) (FurnitureFactory,error){
+	if style == "entic"{
+		return &EnticFurniture{},nil
+	} 
+	if style == "modern"{
+		return &ModernFurniture{}, nil
+	}
 
-// func GetfurnitureFactory(category string) (FurnitureFactory,error){
-// 	if category == "entic"{
-// 		return &EnticFurniture{}, nill
-// 	}
-// }
+	return nil, fmt.Errorf("Wrong brand type passed")
+		
+}

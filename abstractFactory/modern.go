@@ -1,6 +1,5 @@
 package abstractfactory
 
-
 type ModernChair struct {
 	Chair
 }
@@ -8,6 +7,7 @@ type ModernChair struct {
 type ModernDesk struct {
 	Desk
 }
+
 type ModernSopa struct {
 	Sopa
 }
@@ -15,11 +15,30 @@ type ModernSopa struct {
 type ModernFurniture struct {}
 
 
-func (mc *ModernFurniture) MakeChair() Chair {
+func (mc *ModernFurniture) MakeChair() ChairInterface {
 	return &ModernChair{
 		Chair: Chair{
-			name: "modern chair",
-			category: "",
+			name: "modern chair1",
+			category: "modern",
+		},
+	}
+}
+
+
+func (mc *ModernFurniture) MakeDesk() DeskInterface {
+	return &ModernDesk{
+		Desk: Desk{
+			name: "modern desk1",
+			category: "modern",
+		},
+	}
+}
+
+func (mc *ModernFurniture) MakeSopa() SopaInterface {
+	return &ModernSopa{
+		Sopa: Sopa{
+			name: "modern sopa1",
+			category: "modern",
 		},
 	}
 }

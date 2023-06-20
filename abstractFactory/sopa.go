@@ -27,6 +27,6 @@ func (s *Sopa) GetCategory()string{
 	return s.category
 }
 
-func (s *Sopa) Getname()string{
+func (s *Sopa) GetName()string{
 	return s.name
 }
