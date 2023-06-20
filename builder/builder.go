@@ -13,7 +13,6 @@ func GetbBuilder(name string) Connectionbuilder {
 	}else if name == "redis" {
 		return MakeRedisBuilder()
 	}else {
-		
+		panic("Not support to connection")
 	}
-	
 }

@@ -4,10 +4,6 @@ import (
 	"net/http"
 )
 
-type Auth struct {
-	user  string
-	password string
-}
 
 
 type EsConnection struct {
