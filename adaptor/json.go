@@ -32,9 +32,9 @@ func (members *JsonMembers)ConvertByte(path string) *JsonMembers {
 	data, err := ioutil.ReadAll(fp)
 
 
-	xmlValue := json.Unmarshal(data, members)
+	jsonValue := json.Unmarshal(data, members)
 
-	if xmlValue != nil {
+	if jsonValue != nil {
 		panic("Erorr")
 	}
 
@@ -45,7 +45,7 @@ func (members *JsonMembers)ConvertByte(path string) *JsonMembers {
 
 
 func RoadObject(datas *JsonMembers){
-	const path = "./adaptor/convertMembers.xml"
+	const path = "./adaptor/convertJson.json"
 	
 	fp, err := os.Create(path)
 	if err != nil {
@@ -53,14 +53,14 @@ func RoadObject(datas *JsonMembers){
 	}
 	defer fp.Close()
 
-	xmlVluae,xmlErr := json.Marshal(datas)
+	jsonValue,jsonErr := json.Marshal(datas)
 
-	if xmlErr != nil {
-		panic(xmlErr)
+	if jsonErr != nil {
+		panic(jsonErr)
 	}
 
 
 
-	ioutil.WriteFile(path,xmlVluae, 0666)
+	ioutil.WriteFile(path,jsonValue, 0666)
 
 }

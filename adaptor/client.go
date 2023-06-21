@@ -2,15 +2,17 @@ package adaptor
 
 import "fmt"
 
-type Client struct {
 
+
+type Client struct {
+	member Members
 }
 
 func (c *Client) Convert(com ConvertIntreaface,path string) {
-    com.ConvertByte(path)
+    c.member = com.ConvertByte(path)
 }
 
 func (c *Client) Road(com ConvertIntreaface) {
     fmt.Println("Client inserts Lightning connector into computer.")
-    com.RoadObject(c)
+    com.RoadObject(&c.member)
 }
