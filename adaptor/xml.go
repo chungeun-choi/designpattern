@@ -7,20 +7,23 @@ import (
 )
 
 
-type Memeber struct {
+type XmlMemeber struct {
 	Name string
 	Age int
 	Active bool
 }
 
 
-type Members struct {
-	Member [] Memeber
+type XmlMembers struct {
+	Member [] XmlMemeber
 }
 
+func MakeXmlObj() *XmlMembers {
+	return &XmlMembers{}
+}
 
-func ConvertByte() Members {
-	fp, err := os.Open("./adaptor/members.xml")
+func (members *XmlMembers)ConvertByte(path string) *XmlMembers {
+	fp, err := os.Open(path)
     if err != nil {
         panic(err)
     }
@@ -28,9 +31,8 @@ func ConvertByte() Members {
 
 	data, err := ioutil.ReadAll(fp)
 
-	var members Members
 
-	xmlValue := xml.Unmarshal(data, &members)
+	xmlValue := xml.Unmarshal(data, members)
 
 	if xmlValue != nil {
 		panic("Erorr")
@@ -42,11 +44,23 @@ func ConvertByte() Members {
 
 
 
-func RoadObject(datas *Members){
-	fp, err := os.Create("./adaptor/convertMembers.xml")
+func (members *XmlMembers)RoadObject(datas *XmlMembers){
+	const path = "./adaptor/convertMembers.xml"
+	
+	fp, err := os.Create(path)
 	if err != nil {
 		panic(err)
 	}
 	defer fp.Close()
-	
+
+	xmlVluae,xmlErr := xml.Marshal(datas)
+
+	if xmlErr != nil {
+		panic(xmlErr)
+	}
+
+
+
+	ioutil.WriteFile(path,xmlVluae, 0666)
+
 }

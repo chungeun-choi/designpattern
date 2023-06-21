@@ -11,10 +11,11 @@ import (
 
 
 func main() {
+	fmt.Println("Testing")
 	//factory()
 	//abstractFactory()
 	//builder()
-	adaptor()
+	//adaptor()
 }
 
 func printDetails(c CarProduct){
@@ -62,7 +63,10 @@ func builder() {
 }
 
 
-func adaptor() {
-	value:= ConvertByte()
-	fmt.Println(value)
-}
+// func adaptor() {
+// 	testObj := MakeXmlObj()
+
+// 	value := testObj.ConvertByte("./adaptor/members.xml")
+
+// 	RoadObject(value)
+// }

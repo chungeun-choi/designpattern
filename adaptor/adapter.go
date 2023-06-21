@@ -2,11 +2,8 @@ package adaptor
 
 
 type ConvertIntreaface interface {
-	ConvertByte()
+	ConvertByte(path string)
 	RoadObject(any)
 }
-
-
-
 
 
