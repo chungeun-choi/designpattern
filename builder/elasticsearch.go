@@ -2,6 +2,8 @@ package builder
 
 import (
 	"net/http"
+	"strconv"
+	"strings"
 )
 
 
@@ -18,7 +20,7 @@ type EsConnection struct {
 
 
 func (ec *EsConnection) SetConfig() {
-	ec.host = "loaclhsot.com"
+	ec.host = "127.0.0.1"
 	ec.auth = Auth{
 		user: "elastic",
 		password: "skscnd331@",
@@ -27,8 +29,12 @@ func (ec *EsConnection) SetConfig() {
 }
 
 func (ec *EsConnection) ConnetcObject()  {
-	
-	resp,err := http.Get(ec.host)
+	var stb strings.Builder
+	stb.WriteString(ec.host)
+	stb.WriteString(":")
+	stb.WriteString(strconv.Itoa(ec.port))
+
+	resp,err := http.Get(stb.String())
 
 	ec.connection = resp
 	ec.err = err

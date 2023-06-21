@@ -1,0 +1,12 @@
+<Members>
+	<Member>
+		<Name>Alex</Name>
+		<Age>10</Age>
+		<Active>true</Active>
+	</Member>	
+	<Member>
+		<Name>Tim</Name>
+		<Age>12</Age>
+		<Active>false</Active>
+	</Member>
+</Members>

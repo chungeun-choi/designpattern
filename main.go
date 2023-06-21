@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	af "github.com/designpattern/abstractFactory"
+	. "github.com/designpattern/adaptor"
 	. "github.com/designpattern/builder"
 	. "github.com/designpattern/factory"
 )
@@ -12,7 +13,8 @@ import (
 func main() {
 	//factory()
 	//abstractFactory()
-	builder()
+	//builder()
+	adaptor()
 }
 
 func printDetails(c CarProduct){
@@ -49,12 +51,18 @@ func abstractFactory() {
 }	
 
 func builder() {
-	obj := MakeRedisBuilder()
+	obj := MakeEsBuilder()
 
 	obj.SetConfig()
 	obj.ConnetcObject()
 	
-	fmt.Print(obj.GetRedisConnection())
+	fmt.Print(obj.GetEsConnection())
 
 	obj.CheckConnection()
+}
+
+
+func adaptor() {
+	value:= ConvertByte()
+	fmt.Println(value)
 }
