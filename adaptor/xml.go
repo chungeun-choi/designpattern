@@ -7,22 +7,15 @@ import (
 )
 
 
-type XmlMemeber struct {
-	Name string
-	Age int
-	Active bool
-}
-
 
 type XmlMembers struct {
-	Member [] XmlMemeber
 }
 
 func MakeXmlObj() *XmlMembers {
 	return &XmlMembers{}
 }
 
-func (members *XmlMembers)ConvertByte(path string) *XmlMembers {
+func (xm *XmlMembers)ConvertByte(path string) *Members {
 	fp, err := os.Open(path)
     if err != nil {
         panic(err)
@@ -31,7 +24,8 @@ func (members *XmlMembers)ConvertByte(path string) *XmlMembers {
 
 	data, err := ioutil.ReadAll(fp)
 
-
+	var members *Members
+	 
 	xmlValue := xml.Unmarshal(data, members)
 
 	if xmlValue != nil {
