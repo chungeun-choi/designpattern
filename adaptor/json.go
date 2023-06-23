@@ -2,7 +2,6 @@ package adaptor
 
 import (
 	"encoding/json"
-	"encoding/xml"
 	"io/ioutil"
 	"os"
 )
@@ -28,7 +27,7 @@ func (jm *JsonMembers)ConvertByte(path string) *Members {
 	
 	var members *Members
 
-	jsonValue := xml.Unmarshal(data, members)
+	jsonValue := json.Unmarshal(data, members)
 
 	if jsonValue != nil {
 		panic("Erorr")
