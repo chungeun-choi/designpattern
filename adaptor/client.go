@@ -5,14 +5,15 @@ import "fmt"
 
 
 type Client struct {
-	member Members
+	data *Members
 }
 
 func (c *Client) Convert(com ConvertIntreaface,path string) {
-    c.member = com.ConvertByte(path)
+    c.data = com.ConvertByte(path)
+    fmt.Println(c.data)
 }
 
 func (c *Client) Road(com ConvertIntreaface) {
     fmt.Println("Client inserts Lightning connector into computer.")
-    com.RoadObject(&c.member)
+    com.RoadObject(c.data)
 }

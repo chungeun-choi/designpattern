@@ -15,7 +15,8 @@ func main() {
 	//factory()
 	//abstractFactory()
 	//builder()
-	//adaptor()
+	adaptor()
+	
 }
 
 func printDetails(c CarProduct){
@@ -63,10 +64,17 @@ func builder() {
 }
 
 
-// func adaptor() {
-// 	testObj := MakeXmlObj()
+func adaptor() {
+	xmlObj := MakeXmlObj()
+	jsonObj := MakeJsonObj()
 
-// 	value := testObj.ConvertByte("./adaptor/members.xml")
+	client := &Client{}
 
-// 	RoadObject(value)
-// }
+	client.Convert(xmlObj,"/Users/cucuridas/Desktop/study_project/designpattern/adaptor/members.xml")
+	client.Road(jsonObj)
+	// fmt.Println(client.member)
+
+}
+
+
+

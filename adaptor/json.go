@@ -2,27 +2,22 @@ package adaptor
 
 import (
 	"encoding/json"
+	"encoding/xml"
 	"io/ioutil"
 	"os"
 )
 
 
-type JsonMemeber struct {
-	Name string
-	Age int
-	Active bool
-}
 
 
 type JsonMembers struct {
-	Member [] JsonMembers
 }
 
 func MakeJsonObj() *JsonMembers {
 	return &JsonMembers{}
 }
 
-func (members *JsonMembers)ConvertByte(path string) *JsonMembers {
+func (jm *JsonMembers)ConvertByte(path string) *Members {
 	fp, err := os.Open(path)
     if err != nil {
         panic(err)
@@ -30,9 +25,10 @@ func (members *JsonMembers)ConvertByte(path string) *JsonMembers {
     defer fp.Close()
 
 	data, err := ioutil.ReadAll(fp)
+	
+	var members *Members
 
-
-	jsonValue := json.Unmarshal(data, members)
+	jsonValue := xml.Unmarshal(data, members)
 
 	if jsonValue != nil {
 		panic("Erorr")
@@ -44,7 +40,7 @@ func (members *JsonMembers)ConvertByte(path string) *JsonMembers {
 
 
 
-func RoadObject(datas *JsonMembers){
+func (jm *JsonMembers)RoadObject(datas *Members){
 	const path = "./adaptor/convertJson.json"
 	
 	fp, err := os.Create(path)

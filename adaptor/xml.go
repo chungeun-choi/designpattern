@@ -2,6 +2,7 @@ package adaptor
 
 import (
 	"encoding/xml"
+	"fmt"
 	"io/ioutil"
 	"os"
 )
@@ -24,21 +25,23 @@ func (xm *XmlMembers)ConvertByte(path string) *Members {
 
 	data, err := ioutil.ReadAll(fp)
 
-	var members *Members
+	var members Members
 	 
-	xmlValue := xml.Unmarshal(data, members)
+	xmlValue := xml.Unmarshal(data, &members)
 
 	if xmlValue != nil {
 		panic("Erorr")
 	}
+	
+	fmt.Println(members)
 
-	return members
+	return &members
 
 }	
 
 
 
-func (members *XmlMembers)RoadObject(datas *XmlMembers){
+func (xm *XmlMembers)RoadObject(datas *Members){
 	const path = "./adaptor/convertMembers.xml"
 	
 	fp, err := os.Create(path)
