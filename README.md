@@ -9,4 +9,5 @@
 * Factory Method [[링크]](./factory/readme.md)
 * Abstract Factory [[링크]](./abstractFactory/readme.md)
 * Builder [[링크]](./builder/README.md)
-* Adaptor [[링크]](./Adaptor/README.md)
+* Adaptor [[링크]](./adaptor/README.md)
+* Command [[링크]](./command/README.md.md)
