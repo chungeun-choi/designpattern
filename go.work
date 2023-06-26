@@ -2,8 +2,9 @@ go 1.19
 
 use (
 	.
-	./factory
 	./abstractFactory
-	./builder
 	./adaptor
+	./builder
+	./command
+	./factory
 )
