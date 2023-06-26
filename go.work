@@ -7,4 +7,5 @@ use (
 	./builder
 	./command
 	./factory
+	./iterator
 )
