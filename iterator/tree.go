@@ -1,20 +1,22 @@
 package iterator
 
 type Tree struct {
-	nodes []*Node 
+	nodes *Graph 
 	searchType string
 }
 
 func (t *Tree) CreateIterator() Iterator {
 	if t.searchType == "bfs"{
 		return &DepthFirstSearch{
-			nodes: t.nodes,
+			graph: t.nodes,
 		}
 	}else if t.searchType == "dfs" {
 		return &BreadthFirstSearch{
-			nodes: t.nodes,
+			graph: t.nodes,
 		}
 	}else{
 		panic("Not supported")
 	}
 }
+
+

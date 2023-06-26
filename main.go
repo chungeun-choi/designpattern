@@ -7,6 +7,7 @@ import (
 	. "github.com/designpattern/adaptor"
 	. "github.com/designpattern/builder"
 	. "github.com/designpattern/factory"
+	. "github.com/designpattern/iterator"
 )
 
 
@@ -15,7 +16,8 @@ func main() {
 	//factory()
 	//abstractFactory()
 	//builder()
-	adaptor()
+	//adaptor()
+	MakeGraph()
 	
 }
 
@@ -78,3 +80,15 @@ func adaptor() {
 
 
 
+func MakeGraph(){
+	graphValue := Graph{}
+
+	graphValue.InsertValueInNode()
+
+
+	// dfs := DepthFirstSearch{
+	// 	graph: graphValue,
+
+	// }
+	
+}
