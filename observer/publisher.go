@@ -1,7 +1,7 @@
 package observer
 
 type Publisher interface {
-    register(observer Observer)
-    deregister(observer Observer)
-    notifyAll()
+    Register(observer Observer)
+    Deregister(observer Observer)
+    NotifAll()
 }

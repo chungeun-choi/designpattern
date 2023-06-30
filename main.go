@@ -7,7 +7,9 @@ import (
 	. "github.com/designpattern/adaptor"
 	. "github.com/designpattern/builder"
 	. "github.com/designpattern/factory"
-	. "github.com/designpattern/iterator"
+
+	//. "github.com/designpattern/iterator"
+	. "github.com/designpattern/observer"
 )
 
 
@@ -17,7 +19,7 @@ func main() {
 	//abstractFactory()
 	//builder()
 	//adaptor()
-	MakeGraph()
+	observer()
 	
 }
 
@@ -80,15 +82,19 @@ func adaptor() {
 
 
 
-func MakeGraph(){
-	graphValue := Graph{}
+func observer(){
+	store := NewStore("Nike")
+	customer1 := &Customer{
+		ProductExists: false,
+		Id:"이제되네",
+	}
 
-	graphValue.InsertValueInNode()
+	customer2 := &Customer{
+		ProductExists: false,
+		Id: "이제되네2",
+	}
+	store.Register(customer1)
+	store.Register(customer2)
 
-
-	// dfs := DepthFirstSearch{
-	// 	graph: graphValue,
-
-	// }
-	
+	store.UpdateProdcut()
 }
