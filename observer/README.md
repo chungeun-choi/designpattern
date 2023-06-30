@@ -4,7 +4,7 @@
 
 자신이 관찰 중인 객체에 발생하는 모든 이벤트에 대하여 알리는 구독 매커니즘 디자인 패턴
 
-![Untitled](observer/Untitled.png)
+![Untitled](observer/observer.png)
 
 ## 2. 옵저버 패턴을 사용하는 때
 
