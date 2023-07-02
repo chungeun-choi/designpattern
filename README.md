@@ -11,3 +11,6 @@
 * Builder [[링크]](./builder/README.md)
 * Adaptor [[링크]](./adaptor/README.md)
 * Command [[링크]](./command/README.md.md)
+* Iterator [[링크]](./iterator/README.md)
+* Observer [[링크]](./observer/README.md)
+* Stategy [[링크]](./strategy/README.md)
