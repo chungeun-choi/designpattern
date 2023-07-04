@@ -10,6 +10,7 @@ import (
 
 	//. "github.com/designpattern/iterator"
 	. "github.com/designpattern/observer"
+	. "github.com/designpattern/strategy"
 )
 
 
@@ -19,7 +20,8 @@ func main() {
 	//abstractFactory()
 	//builder()
 	//adaptor()
-	observer()
+	//observer()
+	strategy()
 	
 }
 
@@ -97,4 +99,18 @@ func observer(){
 	store.Register(customer2)
 
 	store.UpdateProdcut()
+}
+
+
+func strategy() {
+	
+	obj := &Numbser{
+		Parameter:  []int{1, 2, 3},
+	}
+	strategyObj := &Plus{}
+	obj.SetStrategy(strategyObj)
+	result := obj.DoSomething()
+
+	fmt.Println(result)
+
 }

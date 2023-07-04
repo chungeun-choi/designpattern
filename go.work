@@ -9,4 +9,5 @@ use (
 	./factory
 	./iterator
 	./observer
+	./strategy
 )
