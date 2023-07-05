@@ -10,6 +10,7 @@ import (
 
 	//. "github.com/designpattern/iterator"
 	. "github.com/designpattern/observer"
+	. "github.com/designpattern/prototype"
 	. "github.com/designpattern/strategy"
 )
 
@@ -21,7 +22,8 @@ func main() {
 	//builder()
 	//adaptor()
 	//observer()
-	strategy()
+	//strategy()
+	prototype()
 	
 }
 
@@ -113,4 +115,18 @@ func strategy() {
 
 	fmt.Println(result)
 
+}
+
+
+func prototype() {
+	colorRobot := &ColorRobot{
+		Color: "RED",
+	}
+	armRobot := &ArmRobot{
+		Children: colorRobot,
+		Arm: "Is Settings",
+	}
+
+
+	armRobot.Running()
 }

@@ -9,5 +9,6 @@ use (
 	./factory
 	./iterator
 	./observer
+	./prototype
 	./strategy
 )
