@@ -14,3 +14,5 @@
 * Iterator [[링크]](./iterator/README.md)
 * Observer [[링크]](./observer/README.md)
 * Stategy [[링크]](./strategy/README.md)
+* Prototype [[링크]](./prototype/README.md)
+* Singleton [[링크]](./singleton/README.md)
