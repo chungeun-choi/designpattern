@@ -11,6 +11,7 @@ import (
 	//. "github.com/designpattern/iterator"
 	. "github.com/designpattern/observer"
 	. "github.com/designpattern/prototype"
+	. "github.com/designpattern/singleton"
 	. "github.com/designpattern/strategy"
 )
 
@@ -23,7 +24,8 @@ func main() {
 	//adaptor()
 	//observer()
 	//strategy()
-	prototype()
+	//prototype()
+	singleton()
 	
 }
 
@@ -129,4 +131,13 @@ func prototype() {
 
 
 	armRobot.Running()
+}
+
+
+func singleton() {
+	for i := 0; i < 30; i++ {
+        go GetInstance()
+    }
+
+	fmt.Scanln()
 }

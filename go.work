@@ -10,5 +10,6 @@ use (
 	./iterator
 	./observer
 	./prototype
+	./singleton
 	./strategy
 )
