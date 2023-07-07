@@ -17,3 +17,4 @@ I studied how to develop design patterns in Go language by referring to the cont
 * Stategy [[링크-link]](./strategy/README.md)
 * Prototype [[링크-link]](./prototype/README.md)
 * Singleton [[링크-link]](./singleton/README.md)
+* Decorator [[링크-link]](./decorator/README.md)
