@@ -9,6 +9,7 @@ import (
 	. "github.com/designpattern/factory"
 
 	//. "github.com/designpattern/iterator"
+	. "github.com/designpattern/decorator"
 	. "github.com/designpattern/observer"
 	. "github.com/designpattern/prototype"
 	. "github.com/designpattern/singleton"
@@ -25,7 +26,8 @@ func main() {
 	//observer()
 	//strategy()
 	//prototype()
-	singleton()
+	//singleton()
+	decorator()
 	
 }
 
@@ -140,4 +142,19 @@ func singleton() {
     }
 
 	fmt.Scanln()
+}
+
+func decorator() {
+	product := &ProductA{
+		Name: "Choi",
+	}
+	decoAObj := &DecoratorTypeA{
+		Product: *product,
+	}
+	decoBObj := &DecoratorTypeB{
+		Product: *product,
+	}
+
+	decoAObj.GetProduct()
+	decoBObj.GetProduct()
 }
