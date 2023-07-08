@@ -18,3 +18,4 @@ I studied how to develop design patterns in Go language by referring to the cont
 * Prototype [[링크-link]](./prototype/README.md)
 * Singleton [[링크-link]](./singleton/README.md)
 * Decorator [[링크-link]](./decorator/README.md)
+* Composite [[링크-link]](./composite/README.md)
