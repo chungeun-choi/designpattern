@@ -6,6 +6,7 @@ use (
 	./adaptor
 	./builder
 	./command
+	./composite
 	./decorator
 	./factory
 	./iterator
