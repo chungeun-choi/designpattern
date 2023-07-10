@@ -10,6 +10,7 @@ import (
 
 	//. "github.com/designpattern/iterator"
 	. "github.com/designpattern/decorator"
+	. "github.com/designpattern/facade"
 	. "github.com/designpattern/observer"
 	. "github.com/designpattern/prototype"
 	. "github.com/designpattern/singleton"
@@ -27,7 +28,8 @@ func main() {
 	//strategy()
 	//prototype()
 	//singleton()
-	decorator()
+	//decorator()
+	facade()
 	
 }
 
@@ -157,4 +159,23 @@ func decorator() {
 
 	decoAObj.GetProduct()
 	decoBObj.GetProduct()
+}
+
+func facade() {
+	fo := &FasadeObject{
+		Ob1: &ObjectOne{
+			Name: "test1",
+		},
+		Ob2: &ObjectTwo{
+			Name: "test1",
+		},
+		Ob3: &ObjectThreee{
+			Name: "test1",
+		},
+		Ob4: &ObjectFour{
+			Name: "test1",
+		},
+	}
+
+	fo.Execute()
 }

@@ -8,6 +8,7 @@ use (
 	./command
 	./composite
 	./decorator
+	./facade
 	./factory
 	./iterator
 	./observer
