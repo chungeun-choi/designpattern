@@ -11,6 +11,7 @@ use (
 	./facade
 	./factory
 	./iterator
+	./memento
 	./observer
 	./prototype
 	./singleton

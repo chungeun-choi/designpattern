@@ -11,6 +11,7 @@ import (
 	//. "github.com/designpattern/iterator"
 	. "github.com/designpattern/decorator"
 	. "github.com/designpattern/facade"
+	. "github.com/designpattern/memento"
 	. "github.com/designpattern/observer"
 	. "github.com/designpattern/prototype"
 	. "github.com/designpattern/singleton"
@@ -29,7 +30,8 @@ func main() {
 	//prototype()
 	//singleton()
 	//decorator()
-	facade()
+	//facade()
+	memento()
 	
 }
 
@@ -178,4 +180,30 @@ func facade() {
 	}
 
 	fo.Execute()
+}
+
+
+
+func memento() {
+	targetObject := &TargetObject{
+		Field1: "test1",
+		Field2: "test2",
+		Field3: "test3",
+	}
+	careObject := &CareObject{}
+	snapshot1 := targetObject.CreateSanpshot()
+
+	targetObject.Field1 = "change field1"
+	snapshot2 := targetObject.CreateSanpshot()
+	
+	careObject.AddSnapShot(snapshot1)
+	careObject.AddSnapShot(snapshot2)
+
+	resotreObject := careObject.GetIndxSnapshot(0)
+
+	targetObject.ResotreSnapshot(resotreObject)
+
+
+	fmt.Println(targetObject)
+
 }
