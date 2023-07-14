@@ -20,3 +20,4 @@ I studied how to develop design patterns in Go language by referring to the cont
 * Decorator [[링크-link]](./decorator/README.md)
 * Composite [[링크-link]](./composite/README.md)
 * Facade [[링크-link]](./facade/README.md)
+* Memento [[링크-link]](./memento/README.md)
