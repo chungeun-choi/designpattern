@@ -15,5 +15,6 @@ use (
 	./observer
 	./prototype
 	./singleton
+	./state
 	./strategy
 )

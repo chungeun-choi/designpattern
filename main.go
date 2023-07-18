@@ -15,6 +15,7 @@ import (
 	. "github.com/designpattern/observer"
 	. "github.com/designpattern/prototype"
 	. "github.com/designpattern/singleton"
+	. "github.com/designpattern/state"
 	. "github.com/designpattern/strategy"
 )
 
@@ -31,7 +32,8 @@ func main() {
 	//singleton()
 	//decorator()
 	//facade()
-	memento()
+	//memento()
+	state()
 	
 }
 
@@ -205,5 +207,16 @@ func memento() {
 
 
 	fmt.Println(targetObject)
+
+}
+
+
+func state() {
+	m := NewMachine()
+
+	m.Update()
+
+	m.Delete()
+	
 
 }
